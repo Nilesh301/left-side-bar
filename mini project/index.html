@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        		/* Style for the left sidebar */
+		.sidebar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 100%;
+			background-color: #f1f1f1;
+			overflow-x: hidden;
+			padding-top: 20px;
+		}
+
+		/* Style for the content */
+		.content {
+			margin-left: 200px;
+			padding: 20px;
+		}
+    </style>
+</head>
+<body>
+    
+	<div class="sidebar">
+		<h2>Navigation</h2>
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+
+	<div class="content">
+		<h2>About</h2>
+		<p>This is the about page content.</p>
+	</div>
+
+	<script>
+		// Get the content elements
+		var aboutContent = document.createElement('div');
+		aboutContent.innerHTML = '<h2>About</h2><p>This is the about page content.</p>';
+
+		var contactContent = document.createElement('div');
+		contactContent.innerHTML = '<h2>Contact</h2><p>This is the contact page content.</p>';
+
+		// Get the navigation links
+		var aboutLink = document.querySelector('a[href="#about"]');
+		var contactLink = document.querySelector('a[href="#contact"]');
+
+		// Attach click event listeners to the navigation links
+		aboutLink.addEventListener('click', function() {
+			document.querySelector('.content').innerHTML = aboutContent.innerHTML;
+		});
+
+		contactLink.addEventListener('click', function() {
+			document.querySelector('.content').innerHTML = contactContent.innerHTML;
+		});
+	</script>
+</body>
+</html>
